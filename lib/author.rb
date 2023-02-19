@@ -17,6 +17,11 @@ class Author
         articles.collect { |article| article.magazine }.uniq
     end
 
+    # Given a magazine (as a Magazine instance) and a title (as a string), creates a new Article instance and associates it with that author and that magazine.
+    def add_article(magazine, title)
+        Article.new(magazine, title, self)
+    end
+
     
 
    
