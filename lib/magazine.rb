@@ -30,5 +30,10 @@ class Magazine
     def self.find_by_name(name)
         Article.all.find { |magazine| magazine.name == name}
     end
+
+    # Returns an array string of the titles of all articles written for that magazine
+    def article_titles
+        article.collect { |article| article.title }
+    end
 end
 
