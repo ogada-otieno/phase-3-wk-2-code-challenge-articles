@@ -12,6 +12,13 @@ class Author
         end
     end
 
+    # Returns a unique array of Magazine instances for which the author has contributed to
+    def magazines
+        articles.collect { |article| article.magazine }.uniq
+    end
+
+    
+
    
 end
 
