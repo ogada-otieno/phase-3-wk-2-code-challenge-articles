@@ -25,5 +25,10 @@ class Magazine
     def contributors
         Article.all.filter { |article| article.magazine == self }.map { |article| article.author.name }.uniq
     end
+
+    # Given a string of magazine name, this method returns the first magazine object that matches
+    def self.find_by_name(name)
+        Article.all.find { |magazine| magazine.name == name}
+    end
 end
 
