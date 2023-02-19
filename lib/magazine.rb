@@ -35,5 +35,11 @@ class Magazine
     def article_titles
         article.collect { |article| article.title }
     end
+
+    # Returns an array of authors who have written more than 2 articles for the magazine
+    def contributing_authors
+        popular_authors = Article.all.filter { |article| article.magazine.name == name }.map { |article| article.author.name}.tally.each { |key, value| value > 2 }
+        popular_authors 
+    end
 end
 
