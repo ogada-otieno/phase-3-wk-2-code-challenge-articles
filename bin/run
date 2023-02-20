@@ -1,3 +1,40 @@
-#!usr/bin/env ruby
+# !usr/bin/env ruby
 
 require_relative '../config/environment'
+
+def reload
+  load "config/environment.rb"
+end
+
+# AUTHOR
+biko = Author.new("Biko")
+toni = Author.new("Toni Morison")
+ndii = Author.new("David Ndii")
+
+biko.add_article("Pulse", "I am a man!")
+biko.articles
+biko.magazines
+
+toni.add_article("Vogue", "I am a writer!")
+toni.articles
+toni.magazines
+
+ndii.add_article("Economy", "It's all gone to shit!")
+ndii.articles
+ndii.magazines
+
+# ARTICLE & MAGAZINE
+pulse = Magazine.new("Pulse", "Entertainment")
+article1=Article.new(biko, pulse, "Author1")
+vogue = Magazine.new("Vogue", "Culture")
+article2=Article.new(toni, vogue, "Author2")
+economy = Magazine.new("Economy", "National")
+article3=Article.new(ndii, economy, "Author3")
+
+pulse.articles
+vogue.articles
+article1.author_name
+article2.author_name
+article1.magazine_name
+article2.magazine_name
+

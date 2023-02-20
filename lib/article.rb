@@ -1,5 +1,5 @@
 class Article
-    attr_accessor :author, :magazine, :title
+    attr_accessor :magazine, :title, :author
 
     @@all = []
 
@@ -12,5 +12,13 @@ class Article
 
     def self.all
         @@all
+    end
+
+    def author_name
+        self.author.name
+    end
+
+    def magazine_name
+        self.magazine.name
     end
 end
